@@ -1,0 +1,64 @@
+<app-header [dollar]="dollar" [euro]="euro"></app-header>
+<mat-card class="card" [formGroup]="formGroup">
+  <div class="container">
+    <div>
+      <mat-label *ngIf="leftVal">
+        <span>{{ leftVal.cc }}</span> =
+        <span>{{ leftVal.rate }}</span>
+      </mat-label>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Виберіть Валюту</mat-label>
+          <mat-select formControlName="valueLeft">
+            <mat-option *ngFor="let item of money" [value]="item">
+              {{ item.txt }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <div>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Виберіть кількість(лише цифри)</mat-label>
+            <input
+              matInput
+              placeholder="0"
+              value=""
+              formControlName="inputLeft"
+              (input)="leftInputClick()"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <mat-label *ngIf="leftVal">
+        <span>{{ rightVal.cc }}</span> =
+        <span>{{ rightVal.rate }}</span>
+      </mat-label>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Виберіть Валюту</mat-label>
+          <mat-select formControlName="valueRight">
+            <mat-option *ngFor="let item of money" [value]="item">
+              {{ item.txt }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <div>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Виберіть кількість(лише цифри)</mat-label>
+            <input
+              matInput
+              placeholder="0"
+              value=""
+              formControlName="inputRight"
+              (input)="rightInputClick()"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>

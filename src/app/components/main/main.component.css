@@ -1,0 +1,9 @@
+.card {
+  padding: 50px;
+  background-color: rgb(236, 233, 228);
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}

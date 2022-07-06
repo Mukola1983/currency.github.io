@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.header-row div {
+  margin-right: 30px;
+}
+
+h1 {
+  color: rgb(177, 20, 20);
+  font-size: 25px;
+}
